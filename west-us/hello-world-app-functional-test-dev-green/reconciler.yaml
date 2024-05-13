@@ -1,26 +1,26 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: "observability-prometheus"
+  name: "hello-world-app-functional-test-dev-green"
   namespace: flux-system
 spec:
   interval: 30s
-  url: "https://github.com/eedorenko/kalypso-demo-svc-gitops"
+  url: "https://github.com/eedorenko/hello-world-gitops"
   ref:
-    branch: "dev"
+    branch: "dev-green"
   secretRef:
       name: repo-secret    
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: "observability-prometheus"
+  name: "hello-world-app-functional-test-dev-green"
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-large-observability-prometheus"
+  targetNamespace: "dev-west-us-hello-world-app-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
-    name: "observability-prometheus"
-  path: "./prometheus" 
+    name: "hello-world-app-functional-test-dev-green"
+  path: "./functional-test" 
   prune: true
