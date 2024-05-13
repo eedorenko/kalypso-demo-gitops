@@ -2,10 +2,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: dev-large-observability-prometheus
+  namespace: dev-west-us-hello-world-app-functional-test-dev-green
 data:
-  CLUSTER_NAME: Large
-  DATABASE_URL: mysql://west:8806/mysql2
+  CLUSTER_NAME: Factory Cluster
+  DATABASE_URL: mysql://us-host:3306/mysqlrty123
   ENVIRONMENT: Dev
   REGION: West US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
