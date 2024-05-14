@@ -18,7 +18,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-west-us-hello-world-app-functional-test-dev-green"
+  targetNamespace: "dev-eu-hello-world-app-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
     name: "hello-world-app-functional-test-dev-green"

@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: "hello-world-app-functional-test-dev-gray-eu"
+  name: "hello-world-app-functional-test-dev-gray-west-us"
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: "hello-world-app-functional-test-dev-gray-eu"
+  name: "hello-world-app-functional-test-dev-gray-west-us"
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-eu-hello-world-app-functional-test-dev-gray-eu"
+  targetNamespace: "dev-west-us-hello-world-app-functional-test-dev-gray-west-us"
   sourceRef:
     kind: GitRepository
-    name: "hello-world-app-functional-test-dev-gray-eu"
-  path: "./functional-test/eu" 
+    name: "hello-world-app-functional-test-dev-gray-west-us"
+  path: "./functional-test/west-us" 
   prune: true
