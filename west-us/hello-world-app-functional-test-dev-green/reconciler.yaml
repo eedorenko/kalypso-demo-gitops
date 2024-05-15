@@ -1,26 +1,26 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: "hello-world-app-functional-test-dev-gray-east-us"
+  name: "hello-world-app-functional-test-dev-green"
   namespace: flux-system
 spec:
   interval: 30s
   url: "https://github.com/eedorenko/hello-world-gitops"
   ref:
-    branch: "dev-gray"
+    branch: "dev-green"
   secretRef:
       name: repo-secret    
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: "hello-world-app-functional-test-dev-gray-east-us"
+  name: "hello-world-app-functional-test-dev-green"
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-east-us-hello-world-app-functional-test-dev-gray-east-us"
+  targetNamespace: "dev-west-us-hello-world-app-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
-    name: "hello-world-app-functional-test-dev-gray-east-us"
-  path: "./functional-test/east-us" 
+    name: "hello-world-app-functional-test-dev-green"
+  path: "./functional-test" 
   prune: true
