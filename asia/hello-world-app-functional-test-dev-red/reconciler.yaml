@@ -21,6 +21,6 @@ spec:
   targetNamespace: "dev-asia-hello-world-app-functional-test-dev-red"
   sourceRef:
     kind: GitRepository
-    name: "hello-world-app-functional-test-dev-red"
+    name: dev.kaizen-team.hello-world.hello-world-app-functional-test-dev-red.asia
   path: "./functional-test" 
   prune: true
