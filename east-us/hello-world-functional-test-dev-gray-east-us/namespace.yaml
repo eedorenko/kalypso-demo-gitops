@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "dev-east-us-hello-world-functional-test-dev-gray-east-us" 
+  labels:
+    environment: "dev"
+    workspace: "kaizen-team"
+    workload: "hello-world"
+    deploymentTarget: "hello-world-functional-test-dev-gray-east-us"
+    someLabel: some-value
