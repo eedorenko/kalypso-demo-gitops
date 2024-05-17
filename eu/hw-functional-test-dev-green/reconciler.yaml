@@ -1,26 +1,26 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev-red.kaizen-team.hello-world.functional-test
+  name: dev-green.kaizen-team.hello-world.hw-functional-test
   namespace: flux-system
 spec:
   interval: 30s
   url: "https://github.com/eedorenko/hello-world-gitops"
   ref:
-    branch: "dev-red"
+    branch: "dev-green"
   secretRef:
       name: repo-secret    
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev-red.kaizen-team.hello-world.functional-test
+  name: dev-green.kaizen-team.hello-world.hw-functional-test
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-asia-hello-world-app-functional-test-dev-red"
+  targetNamespace: "dev-eu-hw-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
-    name: dev-red.kaizen-team.hello-world.functional-test
+    name: dev-green.kaizen-team.hello-world.hw-functional-test
   path: "./functional-test" 
   prune: true
