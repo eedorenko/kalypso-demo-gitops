@@ -2,10 +2,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: stage-asia-hello-world-app-uat-test-stage-red
+  namespace: stage-east-us-hw-uat-test-stage-gray
 data:
   CLUSTER_NAME: Factory Cluster
-  DATABASE_URL: mysql://asia-host:3306/mysqlrty123
+  DATABASE_URL: mysql://us-host:3306/mysqlrty123
   ENVIRONMENT: Stage
-  REGION: Asia
+  REGION: East US
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
