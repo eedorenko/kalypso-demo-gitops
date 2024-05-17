@@ -2,10 +2,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: dev-west-us-hello-world-app-functional-test-dev-gray-west-us
+  namespace: dev-eu-hw-functional-test-dev-green
 data:
   CLUSTER_NAME: Factory Cluster
-  DATABASE_URL: mysql://us-host:3306/mysqlrty123
+  DATABASE_URL: mysql://eu-host:3306/mysqlrty123
   ENVIRONMENT: Dev
-  REGION: West US
+  REGION: EU
   SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
