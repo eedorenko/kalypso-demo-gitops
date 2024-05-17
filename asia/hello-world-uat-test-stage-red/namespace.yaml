@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "stage-asia-hello-world-uat-test-stage-red" 
+  labels:
+    environment: "stage"
+    workspace: "kaizen-team"
+    workload: "hello-world"
+    deploymentTarget: "hello-world-uat-test-stage-red"
+    someLabel: some-value
