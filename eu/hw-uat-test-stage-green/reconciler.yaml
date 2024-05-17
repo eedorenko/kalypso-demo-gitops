@@ -1,26 +1,26 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: stage-red.kaizen-team.hello-world.uat-test
+  name: stage-green.kaizen-team.hello-world.uat-test
   namespace: flux-system
 spec:
   interval: 30s
   url: "https://github.com/eedorenko/hello-world-gitops"
   ref:
-    branch: "stage-red"
+    branch: "stage-green"
   secretRef:
       name: repo-secret    
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: stage-red.kaizen-team.hello-world.uat-test
+  name: stage-green.kaizen-team.hello-world.uat-test
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "stage-asia-hello-world-app-uat-test-stage-red"
+  targetNamespace: "stage-eu-hw-uat-test-stage-green"
   sourceRef:
     kind: GitRepository
-    name: stage-red.kaizen-team.hello-world.uat-test
+    name: stage-green.kaizen-team.hello-world.uat-test
   path: "./uat-test" 
   prune: true

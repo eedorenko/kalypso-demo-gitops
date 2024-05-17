@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "stage-west-us-hw-uat-test-stage-gray" 
+  labels:
+    environment: "stage"
+    workspace: "kaizen-team"
+    workload: "hw"
+    deploymentTarget: "hw-uat-test-stage-gray"
+    someLabel: some-value
