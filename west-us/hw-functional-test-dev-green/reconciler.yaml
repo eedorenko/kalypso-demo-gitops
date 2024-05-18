@@ -18,7 +18,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-eu-hw-functional-test-dev-green"
+  targetNamespace: "dev-west-us-hw-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
     name: dev-green.kaizen-team.hello-world.hw-functional-test
