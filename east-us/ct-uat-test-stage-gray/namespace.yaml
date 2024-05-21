@@ -8,3 +8,5 @@ metadata:
     workload: "ct"
     deploymentTarget: "ct-uat-test-stage-gray"
     someLabel: some-value
+  annotations:
+    scheduler.alpha.kubernetes.io/node-selector: environment=stage          
