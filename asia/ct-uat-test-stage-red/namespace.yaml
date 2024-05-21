@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "stage-asia-ct-uat-test-stage-red" 
+  labels:
+    environment: "stage"
+    workspace: "demo-team"
+    workload: "ct"
+    deploymentTarget: "ct-uat-test-stage-red"
+    someLabel: some-value

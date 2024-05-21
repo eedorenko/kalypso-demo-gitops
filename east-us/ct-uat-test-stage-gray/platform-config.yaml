@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-config
+  namespace: stage-east-us-ct-uat-test-stage-gray
+data:
+  CLUSTER_NAME: Factory Cluster
+  DATABASE_URL: mysql://us-host:3306/mysqlrty123
+  ENVIRONMENT: Stage
+  REGION: East US
+  SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
