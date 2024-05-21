@@ -8,3 +8,5 @@ metadata:
     workload: "hw"
     deploymentTarget: "hw-functional-test-dev-green"
     someLabel: some-value
+  annotations:
+    scheduler.alpha.kubernetes.io/node-selector: environment=dev          
