@@ -1,0 +1,26 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: dev-green.demo-team.control-tower.ct-functional-test
+  namespace: flux-system
+spec:
+  interval: 30s
+  url: "https://github.com/eedorenko/control-tower-gitops"
+  ref:
+    branch: "dev-green"
+  secretRef:
+      name: repo-secret    
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: dev-green.demo-team.control-tower.ct-functional-test
+  namespace: flux-system
+spec:
+  interval: 30s
+  targetNamespace: "dev-west-us-ct-functional-test-dev-green"
+  sourceRef:
+    kind: GitRepository
+    name: dev-green.demo-team.control-tower.ct-functional-test
+  path: "./functional-test" 
+  prune: true

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "dev-west-us-ct-functional-test-dev-gray" 
+  labels:
+    environment: "dev"
+    workspace: "demo-team"
+    workload: "ct"
+    deploymentTarget: "ct-functional-test-dev-gray"
+    someLabel: some-value
