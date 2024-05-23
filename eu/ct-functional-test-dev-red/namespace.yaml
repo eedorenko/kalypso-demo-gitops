@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "dev-asia-ct-functional-test-dev-red" 
+  name: "dev-eu-ct-functional-test-dev-red" 
   labels:
     environment: "dev"
     workspace: "demo-team"
