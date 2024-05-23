@@ -8,4 +8,4 @@ data:
   DATABASE_URL: mysql://asia-host:3306/mysqlrty123
   ENVIRONMENT: Dev
   REGION: Asia
-  SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
+  SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
