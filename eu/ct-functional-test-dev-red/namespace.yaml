@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "dev-eu-hw-functional-test-dev-green" 
+  name: "dev-eu-ct-functional-test-dev-red" 
   labels:
     environment: "dev"
-    workspace: "kaizen-team"
-    workload: "hw"
-    deploymentTarget: "hw-functional-test-dev-green"
+    workspace: "demo-team"
+    workload: "ct"
+    deploymentTarget: "ct-functional-test-dev-red"
     someLabel: some-value
   annotations:
     scheduler.alpha.kubernetes.io/node-selector: environment=dev          
