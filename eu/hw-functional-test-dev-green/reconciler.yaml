@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev-green.kaizen-team.hello-world.hw-functional-test
+  name: dev-green.kaizen-team.hello-world.hw.functional-test
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev-green.kaizen-team.hello-world.hw-functional-test
+  name: dev-green.kaizen-team.hello-world.hw.functional-test
   namespace: flux-system
 spec:
   interval: 30s
   targetNamespace: "dev-eu-hw-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
-    name: dev-green.kaizen-team.hello-world.hw-functional-test
+    name: dev-green.kaizen-team.hello-world.hw.functional-test
   path: "./functional-test" 
   prune: true
