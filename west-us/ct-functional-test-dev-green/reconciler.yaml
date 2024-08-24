@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev-green.demo-team.control-tower.ct.functional-test
+  name: dev-green.demo-team.control-tower.ct.ct-functional-test-dev-green
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev-green.demo-team.control-tower.ct.functional-test
+  name: dev-green.demo-team.control-tower.ct.ct-functional-test-dev-green
   namespace: flux-system
 spec:
   interval: 30s
   targetNamespace: "dev-west-us-ct-functional-test-dev-green"
   sourceRef:
     kind: GitRepository
-    name: dev-green.demo-team.control-tower.ct.functional-test
+    name: dev-green.demo-team.control-tower.ct.ct-functional-test-dev-green
   path: "./functional-test" 
   prune: true
