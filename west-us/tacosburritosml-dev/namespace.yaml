@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "dev-west-us-tacos-burritos-ml-dev" 
+  name: "dev-west-us-tacosburritosml-dev" 
   labels:
     environment: "dev"
     workspace: "demo-team"
-    workload: "tacos-burritos-ml"
-    deploymentTarget: "tacos-burritos-ml-dev"
+    workload: "tacosburritosml"
+    deploymentTarget: "tacosburritosml-dev"
     someLabel: some-value
   annotations:
     scheduler.alpha.kubernetes.io/node-selector: environment=dev          
