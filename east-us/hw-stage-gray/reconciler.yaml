@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: stage-gray.kaizen-team.hello-world.hw-uat-test
+  name: stage-gray.kaizen-team.hello-world.hw.hw-stage-gray
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: stage-gray.kaizen-team.hello-world.hw-uat-test
+  name: stage-gray.kaizen-team.hello-world.hw.hw-stage-gray
   namespace: flux-system
 spec:
   interval: 30s
   targetNamespace: "stage-east-us-hw-stage-gray"
   sourceRef:
     kind: GitRepository
-    name: stage-gray.kaizen-team.hello-world.hw-uat-test
+    name: stage-gray.kaizen-team.hello-world.hw.hw-stage-gray
   path: "./hw" 
   prune: true
