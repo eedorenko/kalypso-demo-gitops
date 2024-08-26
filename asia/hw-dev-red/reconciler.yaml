@@ -22,5 +22,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: dev-red.kaizen-team.hello-world.hw.hw-dev-red
-  path: "./functional-test" 
+  path: "./hw" 
   prune: true
