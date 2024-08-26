@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: stage-asia-hw-uat-test-stage-red
+  namespace: stage-asia-hw-stage-red
 data:
   CLUSTER_NAME: Factory Cluster
   DATABASE_URL: mysql://asia-host:3306/mysqlrty123

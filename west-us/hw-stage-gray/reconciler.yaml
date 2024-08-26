@@ -18,9 +18,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "stage-west-us-hw-uat-test-stage-gray"
+  targetNamespace: "stage-west-us-hw-stage-gray"
   sourceRef:
     kind: GitRepository
     name: stage-gray.kaizen-team.hello-world.hw-uat-test
-  path: "./uat-test" 
+  path: "./hw" 
   prune: true
