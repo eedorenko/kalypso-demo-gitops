@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "stage-east-us-hw-uat-test-stage-gray" 
+  name: "stage-eu-hw-stage-green" 
   labels:
     environment: "stage"
     workspace: "kaizen-team"
     workload: "hw"
-    deploymentTarget: "hw-uat-test-stage-gray"
+    deploymentTarget: "hw-stage-green"
     someLabel: some-value
   annotations:
     scheduler.alpha.kubernetes.io/node-selector: environment=stage          
