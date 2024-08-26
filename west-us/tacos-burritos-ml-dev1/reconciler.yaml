@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev
+  name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev1
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev
+  name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev1
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-west-us-tacos-burritos-ml-dev"
+  targetNamespace: "dev-west-us-tacos-burritos-ml-dev1"
   sourceRef:
     kind: GitRepository
-    name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev
+    name: dev.demo-team.dm.tacos-burritos-ml.tacos-burritos-ml-dev1
   path: "./tacos-burritos-ml" 
   prune: true
