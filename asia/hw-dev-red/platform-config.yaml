@@ -6,6 +6,6 @@ metadata:
 data:
   CLUSTER_NAME: Factory Cluster
   DATABASE_URL: mysql://asia-host:3306/mysqlrty123
-  ENVIRONMENT: Dev1
+  ENVIRONMENT: Dev
   REGION: Asia
   SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
