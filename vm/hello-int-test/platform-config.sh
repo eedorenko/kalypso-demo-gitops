@@ -5,5 +5,5 @@ export ENVIRONMENT="Dev"
 
 export REGION="West US"
 
-export SOME_COMMON_ENVIRONMENT_VARIABLE="true"
+export SOME_COMMON_ENVIRONMENT_VARIABLE="false"
            
