@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: stage.kaizen-team.hello-world.hw.hw-performance-test-stage
+  name: stage.kaizen-team.hello-world.hw.hw-func
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: stage.kaizen-team.hello-world.hw.hw-performance-test-stage
+  name: stage.kaizen-team.hello-world.hw.hw-func
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "stage-east-us-hw-performance-test-stage"
+  targetNamespace: "stage-west-us-hw-func"
   sourceRef:
     kind: GitRepository
-    name: stage.kaizen-team.hello-world.hw.hw-performance-test-stage
-  path: "./performance" 
+    name: stage.kaizen-team.hello-world.hw.hw-func
+  path: "./func" 
   prune: true
