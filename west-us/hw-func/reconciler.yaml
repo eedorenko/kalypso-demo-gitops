@@ -22,5 +22,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: stage.kaizen-team.hello-world.hw.hw-func
-  path: "./func" 
+  path: "./hw-func" 
   prune: true

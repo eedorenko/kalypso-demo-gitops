@@ -22,5 +22,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: stage.kaizen-team.hello-world.hw.hw-perf
-  path: "./perf" 
+  path: "./hw-perf" 
   prune: true
