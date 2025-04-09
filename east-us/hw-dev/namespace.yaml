@@ -8,5 +8,38 @@ metadata:
     workload: "hw"
     deploymentTarget: "hw-dev"
     someLabel: some-value
-  annotations:
-    scheduler.alpha.kubernetes.io/node-selector: environment=dev          
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "hw-sa"
+  namespace: "dev-east-us-hw-dev"
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pvc-limit-range
+  namespace: "dev-east-us-hw-dev"
+  labels:
+    environment: "dev"
+    workload: "hw"
+spec:
+  limits:
+  - max:
+      storage: 64Gi
+    min:
+      storage: 1Gi
+    type: PersistentVolumeClaim
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pvc-resource-quota
+  namespace: "dev-east-us-hw-dev"
+  labels:
+    environment: "dev"
+    workload: "hw"
+spec:
+  hard:
+    requests.storage: 64Gi
