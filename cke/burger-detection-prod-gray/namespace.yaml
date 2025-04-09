@@ -4,7 +4,7 @@ metadata:
   name: "prod-cke-burger-detection-prod-gray" 
   labels:
     environment: "prod"
-    workspace: "demo-team"
+    workspace: "dt"
     workload: "burger-detection"
     deploymentTarget: "burger-detection-prod-gray"
     someLabel: some-value
