@@ -1,29 +1,29 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "stage-west-us-chicken-detection-stage" 
+  name: "stage-west-us-entree-detection-stage" 
   labels:
     environment: "stage"
     workspace: "dt"
-    workload: "chicken-detection"
-    deploymentTarget: "chicken-detection-stage"
+    workload: "entree-detection"
+    deploymentTarget: "entree-detection-stage"
     someLabel: some-value
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: "chicken-detection-sa"
-  namespace: "stage-west-us-chicken-detection-stage"
+  name: "entree-detection-sa"
+  namespace: "stage-west-us-entree-detection-stage"
 
 ---
 apiVersion: v1
 kind: LimitRange
 metadata:
   name: pvc-limit-range
-  namespace: "stage-west-us-chicken-detection-stage"
+  namespace: "stage-west-us-entree-detection-stage"
   labels:
     environment: "stage"
-    workload: "chicken-detection"
+    workload: "entree-detection"
 spec:
   limits:
   - max:
@@ -36,10 +36,10 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: pvc-resource-quota
-  namespace: "stage-west-us-chicken-detection-stage"
+  namespace: "stage-west-us-entree-detection-stage"
   labels:
     environment: "stage"
-    workload: "chicken-detection"
+    workload: "entree-detection"
 spec:
   hard:
     requests.storage: 64Gi
