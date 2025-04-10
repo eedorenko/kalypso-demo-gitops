@@ -8,4 +8,6 @@ export ENVIRONMENT="Dev"
 export REGION="EU"
 
 export SOME_COMMON_ENVIRONMENT_VARIABLE="true"
+
+export brand-cke-brand_id="cke"
            
