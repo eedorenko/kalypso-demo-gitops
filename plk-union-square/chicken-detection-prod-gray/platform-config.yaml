@@ -12,7 +12,7 @@ data:
     7:cooked_chicken_breast}'
   model_confidence_threshold: "0.65"
   task_type: object_detection
-  vision_dayparts: lunch 11AM - 1PM
+  vision_dayparts: dinner 5PM - 9PM
   worker_cameras: '["centerpost_front"]'
   worker_operating_fps: "6"
   worker_tracker_distance_function: kou
