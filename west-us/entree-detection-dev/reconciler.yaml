@@ -22,5 +22,5 @@ spec:
   sourceRef:
     kind: GitRepository
     name: dev.dt.kos.entree-detection.entree-detection-dev
-  path: "./chicken-detection" 
+  path: "./entree-detection" 
   prune: true
