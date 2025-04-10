@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "dev-east-us-chicken-detection-dev" 
+  labels:
+    environment: "dev"
+    workspace: "dt"
+    workload: "chicken-detection"
+    deploymentTarget: "chicken-detection-dev"
+    someLabel: some-value
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "chicken-detection-sa"
+  namespace: "dev-east-us-chicken-detection-dev"
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pvc-limit-range
+  namespace: "dev-east-us-chicken-detection-dev"
+  labels:
+    environment: "dev"
+    workload: "chicken-detection"
+spec:
+  limits:
+  - max:
+      storage: 64Gi
+    min:
+      storage: 1Gi
+    type: PersistentVolumeClaim
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pvc-resource-quota
+  namespace: "dev-east-us-chicken-detection-dev"
+  labels:
+    environment: "dev"
+    workload: "chicken-detection"
+spec:
+  hard:
+    requests.storage: 64Gi

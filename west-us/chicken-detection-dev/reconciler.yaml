@@ -1,0 +1,26 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: dev.dt.kos.chicken-detection.chicken-detection-dev
+  namespace: flux-system
+spec:
+  interval: 30s
+  url: "https://github.com/eedorenko/mlops-gitops-gitops"
+  ref:
+    branch: "dev"
+  secretRef:
+      name: repo-secret    
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: dev.dt.kos.chicken-detection.chicken-detection-dev
+  namespace: flux-system
+spec:
+  interval: 30s
+  targetNamespace: "dev-west-us-chicken-detection-dev"
+  sourceRef:
+    kind: GitRepository
+    name: dev.dt.kos.chicken-detection.chicken-detection-dev
+  path: "./chicken-detection" 
+  prune: true
