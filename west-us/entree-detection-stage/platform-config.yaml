@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: platform-config
-  namespace: stage-west-us-chicken-detection-stage
+  namespace: stage-west-us-entree-detection-stage
 data:
   CLUSTER_NAME: Factory Cluster
   DATABASE_URL: mysql://us-host:3306/mysqlrty123
