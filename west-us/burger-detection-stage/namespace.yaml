@@ -4,9 +4,42 @@ metadata:
   name: "stage-west-us-burger-detection-stage" 
   labels:
     environment: "stage"
-    workspace: "demo-team"
+    workspace: "dt"
     workload: "burger-detection"
     deploymentTarget: "burger-detection-stage"
     someLabel: some-value
-  annotations:
-    scheduler.alpha.kubernetes.io/node-selector: environment=stage          
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "burger-detection-sa"
+  namespace: "stage-west-us-burger-detection-stage"
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pvc-limit-range
+  namespace: "stage-west-us-burger-detection-stage"
+  labels:
+    environment: "stage"
+    workload: "burger-detection"
+spec:
+  limits:
+  - max:
+      storage: 64Gi
+    min:
+      storage: 1Gi
+    type: PersistentVolumeClaim
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pvc-resource-quota
+  namespace: "stage-west-us-burger-detection-stage"
+  labels:
+    environment: "stage"
+    workload: "burger-detection"
+spec:
+  hard:
+    requests.storage: 64Gi
