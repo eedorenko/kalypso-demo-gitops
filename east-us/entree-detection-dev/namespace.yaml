@@ -1,29 +1,29 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: "dev-west-us-chicken-detection-dev" 
+  name: "dev-east-us-entree-detection-dev" 
   labels:
     environment: "dev"
     workspace: "dt"
-    workload: "chicken-detection"
-    deploymentTarget: "chicken-detection-dev"
+    workload: "entree-detection"
+    deploymentTarget: "entree-detection-dev"
     someLabel: some-value
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: "chicken-detection-sa"
-  namespace: "dev-west-us-chicken-detection-dev"
+  name: "entree-detection-sa"
+  namespace: "dev-east-us-entree-detection-dev"
 
 ---
 apiVersion: v1
 kind: LimitRange
 metadata:
   name: pvc-limit-range
-  namespace: "dev-west-us-chicken-detection-dev"
+  namespace: "dev-east-us-entree-detection-dev"
   labels:
     environment: "dev"
-    workload: "chicken-detection"
+    workload: "entree-detection"
 spec:
   limits:
   - max:
@@ -36,10 +36,10 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: pvc-resource-quota
-  namespace: "dev-west-us-chicken-detection-dev"
+  namespace: "dev-east-us-entree-detection-dev"
   labels:
     environment: "dev"
-    workload: "chicken-detection"
+    workload: "entree-detection"
 spec:
   hard:
     requests.storage: 64Gi
