@@ -8,5 +8,38 @@ metadata:
     workload: "hw"
     deploymentTarget: "hw-perf-stage"
     someLabel: some-value
-  annotations:
-    scheduler.alpha.kubernetes.io/node-selector: environment=stage          
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: "hw-sa"
+  namespace: "stage-east-us-hw-perf-stage"
+
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pvc-limit-range
+  namespace: "stage-east-us-hw-perf-stage"
+  labels:
+    environment: "stage"
+    workload: "hw"
+spec:
+  limits:
+  - max:
+      storage: 64Gi
+    min:
+      storage: 1Gi
+    type: PersistentVolumeClaim
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pvc-resource-quota
+  namespace: "stage-east-us-hw-perf-stage"
+  labels:
+    environment: "stage"
+    workload: "hw"
+spec:
+  hard:
+    requests.storage: 64Gi
