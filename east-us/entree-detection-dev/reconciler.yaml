@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: dev.dt.kos.chicken-detection.chicken-detection-dev
+  name: dev.dt.kos.entree-detection.entree-detection-dev
   namespace: flux-system
 spec:
   interval: 30s
@@ -14,13 +14,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: dev.dt.kos.chicken-detection.chicken-detection-dev
+  name: dev.dt.kos.entree-detection.entree-detection-dev
   namespace: flux-system
 spec:
   interval: 30s
-  targetNamespace: "dev-west-us-chicken-detection-dev"
+  targetNamespace: "dev-east-us-entree-detection-dev"
   sourceRef:
     kind: GitRepository
-    name: dev.dt.kos.chicken-detection.chicken-detection-dev
+    name: dev.dt.kos.entree-detection.entree-detection-dev
   path: "./chicken-detection" 
   prune: true
