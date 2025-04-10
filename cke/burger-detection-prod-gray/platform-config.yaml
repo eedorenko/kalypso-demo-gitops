@@ -7,7 +7,11 @@ data:
   ENVIRONMENT: Prod
   SOME_COMMON_ENVIRONMENT_VARIABLE: "false"
   brand_id: cke
-  model_class_mapping: '{0:patty, 1:in_progress, 2:completed_burger, 3:packaged_burger}'
+  model_class_mapping:
+    0:patty: null
+    1:in_progress: null
+    2:completed_burger: null
+    3:packaged_burger: null
   model_confidence_threshold: "0.75"
   task_type: object_detection
   vision_dayparts: breakfast 8AM - 10AM
