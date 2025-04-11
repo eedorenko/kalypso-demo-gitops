@@ -18,6 +18,6 @@ data:
   worker_tracker_distance_function: kou
   worker_tracker_distance_threshold: "0.75"
   worker_tracker_name: norfair
-  worker_zones: '["centerpost_front1/chicken_trays", "center_post_front/table"]'
+  worker_zones: '["centerpost_front/chicken_trays", "center_post_front/table"]'
   worker_zones_rentry_buffer_time: 6s
   worker_zones_zone_boundary_threshold: 8 pixels
