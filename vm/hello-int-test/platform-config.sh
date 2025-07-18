@@ -8,4 +8,8 @@ export ENVIRONMENT="Dev"
 export REGION="EU"
 
 export SOME_COMMON_ENVIRONMENT_VARIABLE="true"
+
+export keyVaultSecrets="[objectName: application-secret\nobjectType: secret\n]"
+
+export secretObjects="[map[data:[map[sourcePath:application-secret targetKey:application-secret-value]] secretName:application-secret type:Opaque]]"
            

@@ -9,3 +9,13 @@ data:
   ENVIRONMENT: Dev
   REGION: EU
   SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
+  keyVaultSecrets: |
+    - |
+      objectName: application-secret
+      objectType: secret
+  secretObjects: |
+    - data:
+      - sourcePath: application-secret
+        targetKey: application-secret-value
+      secretName: application-secret
+      type: Opaque
