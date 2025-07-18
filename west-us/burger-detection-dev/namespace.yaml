@@ -43,3 +43,31 @@ metadata:
 spec:
   hard:
     requests.storage: 64Gi
+---
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: "burger-detection-spc"
+  namespace: "dev-west-us-burger-detection-dev"
+  labels:
+    environment: "dev"
+    workload: "burger-detection"
+spec:
+  provider: azure
+
+  parameters:
+    keyvaultName: "<no value>"
+    objects: |
+      array:
+          null
+    tenantID: "<no value>"
+---
+apiVersion: secret-sync.x-k8s.io/v1alpha1
+kind: SecretSync
+metadata:
+  name: "burger-detection-secret-sync"
+  namespace: "dev-west-us-burger-detection-dev"
+spec:
+  serviceAccountName: "burger-detection-sa"
+  secretProviderClassName: "burger-detection-spc"
+

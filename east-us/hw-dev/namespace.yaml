@@ -43,3 +43,31 @@ metadata:
 spec:
   hard:
     requests.storage: 64Gi
+---
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: "hw-spc"
+  namespace: "dev-east-us-hw-dev"
+  labels:
+    environment: "dev"
+    workload: "hw"
+spec:
+  provider: azure
+
+  parameters:
+    keyvaultName: "<no value>"
+    objects: |
+      array:
+          null
+    tenantID: "<no value>"
+---
+apiVersion: secret-sync.x-k8s.io/v1alpha1
+kind: SecretSync
+metadata:
+  name: "hw-secret-sync"
+  namespace: "dev-east-us-hw-dev"
+spec:
+  serviceAccountName: "hw-sa"
+  secretProviderClassName: "hw-spc"
+

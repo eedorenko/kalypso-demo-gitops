@@ -9,3 +9,15 @@ data:
   ENVIRONMENT: Dev
   REGION: EU
   SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
+  azureTenantId: 16b3c013-d300-468d-ac64-7eda0820b6d3
+  keyVaultSecrets: |
+    - |
+      objectName: application-secret
+      objectType: secret
+  keyvaultName: ansible-secret-key-vault
+  secretObjects: |
+    - data:
+      - sourcePath: application-secret
+        targetKey: application-secret-value
+      secretName: application-secret
+      type: Opaque
