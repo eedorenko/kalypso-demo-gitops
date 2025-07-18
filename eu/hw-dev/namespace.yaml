@@ -43,3 +43,41 @@ metadata:
 spec:
   hard:
     requests.storage: 64Gi
+---
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: "hw-spc"
+  namespace: "dev-eu-hw-dev"
+  labels:
+    environment: "dev"
+    workload: "hw"
+spec:
+  provider: azure
+
+  parameters:
+    keyvaultName: "ansible-secret-key-vault"
+    objects: |
+      array:
+          - |
+            objectName: application-secret
+            objectType: secret
+    tenantID: "16b3c013-d300-468d-ac64-7eda0820b6d3"
+---
+
+
+apiVersion: secret-sync.x-k8s.io/v1alpha1
+kind: SecretSync
+metadata:
+  name: "<no value>-secret-sync"
+  namespace: "<no value>"
+spec:
+  serviceAccountName: "<no value>-sa"
+  secretProviderClassName: "<no value>-spc"
+  secretObject:
+  type: "Opaque"
+  data: 
+    - sourcePath: application-secret
+      targetKey: application-secret-value
+  
+
