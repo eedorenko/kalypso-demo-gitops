@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install cron job (ansible-pull)
+    cron:
+      name: entree-detection-dev
+      minute: "*/1"
+      user: dev-entree-detection-dev
+      job: |
+        ansible-pull -o -U https://github.com/eedorenko/mlops-gitops-gitops -C dev ./entree-detection > $HOME/ansible-pull-entree-detection-dev.log 2>$HOME/ansible-pull-entree-detection-dev.err

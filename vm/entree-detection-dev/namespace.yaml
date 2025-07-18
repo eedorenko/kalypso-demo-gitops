@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+  - name: create a user
+    ansible.builtin.user:
+        name: dev-entree-detection-dev
+  - name: cope platform configs
+    ansible.builtin.copy:
+        src: ./platform-config.sh
+        dest: /home/dev-entree-detection-dev/platform-config.sh
+        owner: dev-entree-detection-dev
+        group: dev-entree-detection-dev
+        mode: u+rw,g-wx,o-rwx

@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install cron job (ansible-pull)
+    cron:
+      name: burger-detection-dev
+      minute: "*/1"
+      user: dev-burger-detection-dev
+      job: |
+        ansible-pull -o -U https://github.com/eedorenko/mlops-gitops-gitops -C dev ./burger-detection > $HOME/ansible-pull-burger-detection-dev.log 2>$HOME/ansible-pull-burger-detection-dev.err

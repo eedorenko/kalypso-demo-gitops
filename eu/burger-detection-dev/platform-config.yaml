@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-config
+  namespace: dev-eu-burger-detection-dev
+data:
+  CLUSTER_NAME: Factory Cluster
+  DATABASE_URL: mysql://eu-db-host:3308/mysql
+  ENVIRONMENT: Dev
+  REGION: EU
+  SOME_COMMON_ENVIRONMENT_VARIABLE: "true"
