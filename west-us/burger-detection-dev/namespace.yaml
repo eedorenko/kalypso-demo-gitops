@@ -54,7 +54,7 @@ metadata:
     workload: "burger-detection"
 spec:
   provider: azure
-
+  clientID: "<no value>"
   parameters:
     keyvaultName: "<no value>"
     objects: |

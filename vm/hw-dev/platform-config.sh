@@ -15,5 +15,7 @@ export keyVaultSecrets="[objectName: application-secret\nobjectType: secret\n]"
 
 export keyvaultName="ansible-secret-key-vault"
 
+export managedIdentityId="332f57f9-6de8-4929-ad1e-f1f3015ee0ae"
+
 export secretObjects="[map[data:[map[sourcePath:application-secret targetKey:application-secret-value]] type:Opaque]]"
            

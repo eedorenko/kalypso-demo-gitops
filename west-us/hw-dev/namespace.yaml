@@ -54,7 +54,7 @@ metadata:
     workload: "hw"
 spec:
   provider: azure
-
+  clientID: "<no value>"
   parameters:
     keyvaultName: "<no value>"
     objects: |

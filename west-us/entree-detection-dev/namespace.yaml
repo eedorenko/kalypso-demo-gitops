@@ -54,7 +54,7 @@ metadata:
     workload: "entree-detection"
 spec:
   provider: azure
-
+  clientID: "<no value>"
   parameters:
     keyvaultName: "<no value>"
     objects: |
