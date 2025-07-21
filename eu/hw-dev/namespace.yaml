@@ -54,7 +54,7 @@ metadata:
     workload: "hw"
 spec:
   provider: azure
-
+  clientID: "332f57f9-6de8-4929-ad1e-f1f3015ee0ae"
   parameters:
     keyvaultName: "ansible-secret-key-vault"
     objects: |

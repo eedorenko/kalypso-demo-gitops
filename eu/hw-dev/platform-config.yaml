@@ -15,6 +15,7 @@ data:
       objectName: application-secret
       objectType: secret
   keyvaultName: ansible-secret-key-vault
+  managedIdentityId: 332f57f9-6de8-4929-ad1e-f1f3015ee0ae
   secretObjects: |
     - data:
       - sourcePath: application-secret
