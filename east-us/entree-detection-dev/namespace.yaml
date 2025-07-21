@@ -53,9 +53,9 @@ metadata:
     environment: "dev"
     workload: "entree-detection"
 spec:
-  provider: azure
-  clientID: "<no value>"
+  provider: azure        
   parameters:
+    clientID: "<no value>"
     keyvaultName: "<no value>"
     objects: |
       array:
