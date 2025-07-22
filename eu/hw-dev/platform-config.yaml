@@ -14,10 +14,24 @@ data:
     - |
       objectName: application-secret
       objectType: secret
+    - |
+      objectName: acr-secret
+      objectType: secret
+    - |
+      objectName: git-hub-token
+      objectType: secret
   keyvaultName: ansible-secret-key-vault
   managedIdentityId: 332f57f9-6de8-4929-ad1e-f1f3015ee0ae
   secretObjects: |
     - data:
       - sourcePath: application-secret
         targetKey: application-secret-value
+      name: application-secret
+      type: Opaque
+    - data:
+      - sourcePath: git-hub-user
+        targetKey: username
+      - sourcePath: git-hub-token
+        targetKey: password
+      name: gh-repo-secret
       type: Opaque
