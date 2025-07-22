@@ -88,6 +88,7 @@ spec:
     data: 
       - sourcePath: application-secret
         targetKey: application-secret-value
+---
 
 apiVersion: secret-sync.x-k8s.io/v1alpha1
 kind: SecretSync
@@ -104,5 +105,6 @@ spec:
         targetKey: username
       - sourcePath: git-hub-token
         targetKey: password
+---
   
 
