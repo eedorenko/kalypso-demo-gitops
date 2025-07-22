@@ -20,6 +20,9 @@ data:
     - |
       objectName: git-hub-token
       objectType: secret
+    - |
+      objectName: git-hub-user
+      objectType: secret
   keyvaultName: ansible-secret-key-vault
   managedIdentityId: 332f57f9-6de8-4929-ad1e-f1f3015ee0ae
   secretObjects: |

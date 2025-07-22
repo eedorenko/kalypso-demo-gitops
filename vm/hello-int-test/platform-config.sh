@@ -11,7 +11,7 @@ export SOME_COMMON_ENVIRONMENT_VARIABLE="true"
 
 export azureTenantId="16b3c013-d300-468d-ac64-7eda0820b6d3"
 
-export keyVaultSecrets="[objectName: application-secret\nobjectType: secret\n objectName: acr-secret\nobjectType: secret\n objectName: git-hub-token\nobjectType: secret\n]"
+export keyVaultSecrets="[objectName: application-secret\nobjectType: secret\n objectName: acr-secret\nobjectType: secret\n objectName: git-hub-token\nobjectType: secret\n objectName: git-hub-user\nobjectType: secret\n]"
 
 export keyvaultName="ansible-secret-key-vault"
 
