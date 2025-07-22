@@ -109,5 +109,20 @@ spec:
       - sourcePath: git-hub-token
         targetKey: password
 ---
+
+apiVersion: secret-sync.x-k8s.io/v1alpha1
+kind: SecretSync
+metadata:
+  name: acr-secret
+  namespace: dev-eu-hw-dev
+spec:
+  serviceAccountName: "hw-sa"
+  secretProviderClassName: "hw-spc"
+  secretObject:
+    type: "Opaque"
+    data: 
+      - sourcePath: acr-secret
+        targetKey: .dockerconfigjson
+---
   
 

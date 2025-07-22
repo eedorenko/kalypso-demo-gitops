@@ -38,3 +38,8 @@ data:
         targetKey: password
       name: gh-repo-secret
       type: Opaque
+    - data:
+      - sourcePath: acr-secret
+        targetKey: .dockerconfigjson
+      name: acr-secret
+      type: Opaque
